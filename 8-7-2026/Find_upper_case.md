@@ -6,19 +6,18 @@
             String s = "SAvsodavA"; //sc.nextLine();
             StringBuilder r = new StringBuilder();
 
-        for (int i = 0; i < s.length(); i++)
-            if (Character.isUpperCase(s.charAt(i)))
-                r.append(r.length() > 0 ? "," : "").append(i);
+            for (int i = 0; i < s.length(); i++)
+                if (Character.isUpperCase(s.charAt(i)))
+                    r.append(r.length() > 0 ? "," : "").append(i);
 
-        System.out.print(r.length() > 0 ? r : "None");
+            System.out.print(r.length() > 0 ? r : "None");
 
 `JavaScript`
 
         const fs = require("fs");
 
-const s = fs.readFileSync(0, "utf8").trimEnd();
+        const s = fs.readFileSync(0, "utf8").trimEnd();
 
-// Tìm tất cả chữ hoa và lấy ra danh sách index (vị trí) của chúng
-const result = [...s.matchAll(/[A-Z]/g)].map(match => match.index);
+        const result = [...s.matchAll(/[A-Z]/g)].map(match => match.index);
 
-console.log(result.length ? result.join(",") : "None");
+        console.log(result.length ? result.join(",") : "None");
