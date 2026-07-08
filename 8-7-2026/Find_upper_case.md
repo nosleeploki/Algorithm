@@ -14,19 +14,11 @@
 
 `JavaScript`
 
-        const fs = require("fs"); //import File System
+        const fs = require("fs");
 
-        const s = fs.readFileSync(0, "utf8").trimEnd(); //Read input and save s
-                                                        // .trimEnd() for delete break line at the end of String
+const s = fs.readFileSync(0, "utf8").trimEnd();
 
-        let result = []; //empty arr
+// Tìm tất cả chữ hoa và lấy ra danh sách index (vị trí) của chúng
+const result = [...s.matchAll(/[A-Z]/g)].map(match => match.index);
 
-
-        for (let i = 0; i < s.length; i++) {
-        // Find Upper case and push into result
-            if (s[i] >= "A" && s[i] <= "Z") {
-                result.push(i);
-            }
-        }
-
-        console.log(result.length ? result.join(",") : "None");
+console.log(result.length ? result.join(",") : "None");
